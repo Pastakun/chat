@@ -1,4 +1,4 @@
-const socket = new WebSocket('wss://192.168.0.40:9998');
+const socket = new WebSocket('wss://192.168.0.40:10005');
 function send(){
   socket.send(`${document.getElementsByName('name')[0].value}: ${document.getElementsByName('text')[0].value}`);
 }
