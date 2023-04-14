@@ -1,1 +1,14 @@
-
+<script>
+$(function(){
+    $.ajax({
+        url: 'recieve.py',
+        type: 'post',
+        data: '送信メッセージ'
+    }).done(function(data){
+        console.log(data);
+        });
+    }).fail(function(){
+        console.log('failed');
+    });
+});
+</script>
