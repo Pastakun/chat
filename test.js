@@ -1,10 +1,22 @@
-const socket = new WebSocket('wss://192.168.0.40:10005/');
-function send(){
-  socket.send(`${document.getElementsByName('name')[0].value}: ${document.getElementsByName('text')[0].value}`);
+var uri = 'ws://192.168.0.40:10005';
+
+window.onload = function () {
+  connection = new WebSocket(uri);
+  connection.onopen = onOpen;
+  connection.onmessage = onMessage;
 }
-socket.addEventListener('message', (event) => {
+
+function onOpen(event) {
+  console.log("Connect successful!");
+}
+
+function onMessage(event) {
+  //Incoming data
   let text = document.createElement('p');
   text.prepend(event.data);
   let textbox = document.getElementById('textbox');
   textbox.prepend(text);
-});
+}
+function send(){
+  connection.send(`${document.getElementsByName('name')[0].value}: ${document.getElementsByName('text')[0].value}`);
+}
