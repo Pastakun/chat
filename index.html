@@ -6,13 +6,12 @@
     <title>Pasta-kunのチャット</title>
   </head>
   <body>
-    <br>名前</br>
-    <input type="text" name="name"></p>
-    <br>文章</br>
-    <input type="text" name="text"></p>
-    <input type="button" value="送信" onclick="send()">
-    <div id="textbox">
-    </div>
+    <form id="fp" action="./sumple.py"> <!--actionは同じ階層に入れたpythonファイル-->
+      <input type="number" name="num1" id="num1" placeholder="0"/> <!--nameの指定を忘れずに‼-->
+      <input type="number" name="num2" id="num2" placeholder="0"/> <!--nameの指定を忘れずに‼-->
+    </form>
+    <button id="submit">送信</button>
+    <div class="result">結果 : </div><!--ここに結果が表示される-->
     <script src="test.js"></script>
   </body>
 </html>
