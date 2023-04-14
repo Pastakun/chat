@@ -1,4 +1,5 @@
 var uri = 'ws://192.168.0.40:10005';
+var connection;
 
 window.onload = function () {
   connection = new WebSocket(uri);
