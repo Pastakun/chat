@@ -1,4 +1,4 @@
-var uri = 'wws://192.168.0.40:10005';
+var uri = 'wss://192.168.0.40:10005';
 var connection;
 
 window.onload = function () {
