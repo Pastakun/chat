@@ -6,5 +6,5 @@ function cloudsend(method,user,project_id,name,value) {
 
 // 接続が開いたときのイベント
 socket.addEventListener('open', function (event) {
-	cloudsend("handshake","user","625842821");
+	cloudsend("handshake","user","Pasta-kunChat");
 });
