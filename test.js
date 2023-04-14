@@ -1,23 +1,19 @@
-var uri = 'wss://192.168.0.40:10005';
-var connection;
+const fp = document.getElementById("fp");
+const submit = document.getElementById("submit");
+const result = document.querySelector(".result");
+const url =
+  "https://xxxxxxxxxxxx/sumple.py"; // pythonファイルのURL
 
-window.onload = function () {
-  connection = new WebSocket(uri);
-  connection.onopen = onOpen;
-  connection.onmessage = onMessage;
-}
+submit.addEventListener("click", () => {
+  let formData = new FormData(fp); // フォームの値をformDataにセット
 
-function onOpen(event) {
-  console.log("Connect successful!");
-}
-
-function onMessage(event) {
-  //Incoming data
-  let text = document.createElement('p');
-  text.prepend(event.data);
-  let textbox = document.getElementById('textbox');
-  textbox.prepend(text);
-}
-function send(){
-  connection.send(`${document.getElementsByName('name')[0].value}: ${document.getElementsByName('text')[0].value}`);
-}
+  async function postData() {      // async await をお忘れなく
+    const res = await fetch(url, { // urlへ
+      method: "POST",              // POST送信
+      body: formData,
+    });
+    const r = await res.json(); // レスポンスをjsonで受け取る
+    result.textContent = "結果 : " + r;
+  }
+  postData();
+});
