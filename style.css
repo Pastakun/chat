@@ -68,5 +68,8 @@ input:focus {
 	position: relative;
 }
 #chat::-webkit-scrollbar{
-  display: none;
+	display: none;
+}
+p {
+	font-size: 150%;
 }
