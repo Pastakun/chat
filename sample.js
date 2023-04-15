@@ -20,11 +20,15 @@ socket.addEventListener('message', function (event) {
 	}
 	addchat(messagetext);
 });
+
 function addchat(text) {
 	const newtext = document.createElement('p');
 	newtext.textContent = text;
 	chat.appendChild(newtext);
-	chat.scrollTop = chat.scrollHeight;
+	chat.scrollTo({
+		top: chat.scrollHeight,
+		behavior: 'smooth',
+	});
 }
 function send() {
 	const input = document.getElementById("form-text");
