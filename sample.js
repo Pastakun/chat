@@ -20,7 +20,6 @@ socket.addEventListener('message', function (event) {
 	}
 	addchat(messagetext);
 });
-
 function addchat(text) {
 	const newtext = document.createElement('p');
 	newtext.textContent = text;
