@@ -21,6 +21,10 @@ socket.addEventListener('message', function (event) {
 	addchat(messagetext);
 });
 
+socket.addEventListener('close', (event) => {
+    window.location.reload;
+});
+
 function addchat(text) {
 	const newtext = document.createElement('p');
 	newtext.textContent = text;
