@@ -22,7 +22,7 @@ socket.addEventListener('message', function (event) {
 });
 
 socket.addEventListener('close', (event) => {
-    window.location.reload;
+    location.reload()
 });
 
 function addchat(text) {
