@@ -82,3 +82,6 @@ p:nth-child(2n){
 	left:1em;
 	position: relative;
 }
+#chat > div{
+	margin:1em;
+}
