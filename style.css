@@ -73,6 +73,12 @@ input[type="text"]:focus {
 #chat::-webkit-scrollbar{
 	display: none;
 }
-p {
+p:nth-child(2n + 1){
 	font-size: 150%;
+	display:inline
+}
+p:nth-child(2n){
+	display:inline;
+	left:1em;
+	position: relative;
 }
