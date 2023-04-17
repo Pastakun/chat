@@ -16,11 +16,12 @@ socket.addEventListener('open', function (event) {
 
 socket.addEventListener('message', function (event) {
 	const messagedata = JSON.parse(event.data.split("\n")[0]).value;
+	const messagetime = `${messagedata.substr( 0, 2 ) - 10}:${messagedata.substr( 2, 2 ) - 10}`;
 	let messagetext = ""
-	for (let i = 0; i < messagedata.length / 4; i++){
-		messagetext += character.charAt(messagedata.substr( i * 4, 4 ) - 1001);
+	for (let i = 0; i < (messagedata.length - 4) / 4; i++){
+		messagetext += character.charAt(messagedata.substr( (i * 4) + 4, 4 ) - 1001);
 	}
-	addchat(messagetext);
+	addchat(messagetext,messagetime);
 	if (!document.getElementById("mute").checked) {
 		music.currentTime = 0;
 		music.play(); 
@@ -31,19 +32,28 @@ socket.addEventListener('close', function (event) {
     location.reload()
 });
 
-function addchat(text) {
+function addchat(text, time) {
+	const newdiv = document.createElement('div');
+	chat.appendChild(newdiv);
 	const newtext = document.createElement('p');
 	newtext.textContent = text;
-	chat.appendChild(newtext);
+	chat.lastElementChild.appendChild(newtext);
+	const newtext2 = document.createElement('p');
+	newtext2.textContent = time;
+	chat.lastElementChild.appendChild(newtext2);
 	chat.scrollTo({
 		top: chat.scrollHeight,
 		behavior: 'smooth',
 	});
 }
 function send() {
+	const now = new Date();
 	const inputtext = `${document.getElementById("username").value} : ${input.value}`;
-	addchat(inputtext);
+	const inputtime = `${now.getHours()}:${now.getMinutes()}`;
+	addchat(inputtext,inputtime);
 	let senddata = "";
+	senddata += now.getHours() + 10;
+	senddata += now.getMinutes() + 10;
 	for (let i = 0; i < inputtext.length; i++){
 		senddata += character.indexOf(inputtext.charAt(i)) + 1001;
 	}
