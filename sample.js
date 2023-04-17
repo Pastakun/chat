@@ -2,10 +2,8 @@ const character = " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[
 
 const chat = document.getElementById("chat");
 const input = document.getElementById("form-text");
-let socket;
-window.onload = function() {
-	socket = new WebSocket('wss://clouddata.turbowarp.org/');
-}
+
+const socket = new WebSocket('wss://clouddata.turbowarp.org/');
 const music = new Audio('カーソル移動1.mp3');
 
 function cloudsend(method,user,project_id,name,value) {
