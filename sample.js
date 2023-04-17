@@ -2,7 +2,9 @@ const character = " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[
 
 const chat = document.getElementById("chat");
 const input = document.getElementById("form-text");
-const socket = new WebSocket('wss://clouddata.turbowarp.org/');
+window.onload = function() {
+	const socket = new WebSocket('wss://clouddata.turbowarp.org/');
+}
 const music = new Audio('カーソル移動1.mp3');
 
 function cloudsend(method,user,project_id,name,value) {
@@ -20,8 +22,8 @@ socket.addEventListener('message', function (event) {
 		messagetext += character.charAt(messagedata.substr( i * 4, 4 ) - 1001);
 	}
 	addchat(messagetext);
-    music.currentTime = 0; //連続クリックに対応
-    music.play(); //クリックしたら音を再生
+    music.currentTime = 0;
+    music.play(); 
 });
 
 socket.addEventListener('close', function (event) {
