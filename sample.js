@@ -21,8 +21,10 @@ socket.addEventListener('message', function (event) {
 		messagetext += character.charAt(messagedata.substr( i * 4, 4 ) - 1001);
 	}
 	addchat(messagetext);
-    music.currentTime = 0;
-    music.play(); 
+	if (!document.getElementById("mute").checked) {
+		music.currentTime = 0;
+		music.play(); 
+	}
 });
 
 socket.addEventListener('close', function (event) {
