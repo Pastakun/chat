@@ -1,6 +1,11 @@
-body {
-	font-family: Arial;
+html, body {
+  font-family: Arial;
+  height: 100%; //親要素の高さを最大化
 }
+.max-height {
+  height: 100%; //親要素の高さに合わせて最大化
+}
+
 #username {
 	height: 2em;
 	width:  20em;
@@ -66,9 +71,9 @@ input[type="text"]:focus {
 #chat {
 	overflow:auto;
 	overflow-y: scroll;
-	height: 31em;
-	top:1em;
-	position: relative;
+	height: 70%;
+	width: 100%;
+	top: 0px;
 }
 #chat::-webkit-scrollbar{
 	display: none;
