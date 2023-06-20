@@ -1,9 +1,11 @@
-html, body {
-  font-family: Arial;
-  height: 100%; //親要素の高さを最大化
+* {
+	font-family: 'Yuji Syuku', serif;
+}
+body {
+	height: 100%; 
 }
 .max-height {
-  height: 100%; //親要素の高さに合わせて最大化
+	height: 100%; 
 }
 
 #username {
