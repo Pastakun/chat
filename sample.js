@@ -51,8 +51,10 @@ function addchat(text, time) {
 		} else if(text.includes('!red')) {
 			document.getElementsByTagName('body')[0].style.backgroundColor = 'red';
 			newtext.textContent = text.replace('!red',"");
-		}
-		else {
+		} else if(text.includes('!black')) {
+			document.getElementsByTagName('body')[0].style.backgroundColor = 'black';
+			newtext.textContent = text.replace('!black',"");
+		} else {
 			newtext.textContent = text;
 		}
 	chat.lastElementChild.appendChild(newtext);
