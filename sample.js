@@ -39,7 +39,10 @@ function addchat(text, time) {
 		if (text.includes('!gold')) {
 			newtext.className = 'gold';
 			newtext.textContent = text.replace('!gold',"");
-		}else {
+		}else if(text.includes('!silver')) {
+			newtext.className = 'silver';
+			newtext.textContent = text.replace('!silver',"");
+		}
 			newtext.textContent = text;
 		}
 	chat.lastElementChild.appendChild(newtext);
