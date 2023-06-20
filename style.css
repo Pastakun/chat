@@ -104,3 +104,12 @@ p:nth-child(2n){
 	background: repeating-linear-gradient(0deg, #757575 0.1em, #9E9E9E 0.2em, #E8E8E8 0.3em, #9E9E9E 0.4em, #757575 0.5em); 
 	-webkit-background-clip: text;
 }
+.blue {
+	font-weight:bold;
+	color: #FFF;
+	text-shadow: 
+		0 0 0.10em #2962FF,
+		0 0 0.15em #2962FF,
+		0 0 0.80em #2962FF,
+		0 0 1.00em #2962FF;
+}
