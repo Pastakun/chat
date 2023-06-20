@@ -42,7 +42,7 @@ function addchat(text, time) {
 		}else if(text.includes('!silver')) {
 			newtext.className = 'silver';
 			newtext.textContent = text.replace('!silver',"");
-		}
+		}else {
 			newtext.textContent = text;
 		}
 	chat.lastElementChild.appendChild(newtext);
@@ -53,6 +53,7 @@ function addchat(text, time) {
 		top: chat.scrollHeight,
 		behavior: 'smooth',
 	});
+}
 function send() {
 	const now = new Date();
 	const inputtext = `${document.getElementById("username").value} : ${input.value}`;
