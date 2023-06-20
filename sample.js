@@ -45,6 +45,9 @@ function addchat(text, time) {
 		} else if(text.includes('!blue')){
 			newtext.className = 'blue';
 			newtext.textContent = text.replace('!blue',"");
+		} else if(text.includes('!white')) {
+			newtext.className = 'white';
+			newtext.textContent = text.replace('!white',"");
 		}else {
 			newtext.textContent = text;
 		}
