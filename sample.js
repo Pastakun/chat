@@ -36,7 +36,12 @@ function addchat(text, time) {
 	const newdiv = document.createElement('div');
 	chat.appendChild(newdiv);
 	const newtext = document.createElement('p');
-	newtext.textContent = text;
+		if (text.includes('!gold')) {
+			newtext.className = 'gold';
+			newtext.textContent = text.replace('!gold',"");
+		}else {
+			newtext.textContent = text;
+		}
 	chat.lastElementChild.appendChild(newtext);
 	const newtext2 = document.createElement('p');
 	newtext2.textContent = time;
