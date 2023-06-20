@@ -113,3 +113,7 @@ p:nth-child(2n){
 		0 0 0.80em #2962FF,
 		0 0 1.00em #2962FF;
 }
+.white {
+	font-weight:bold;
+	color: #FFF;
+}
