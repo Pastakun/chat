@@ -1,7 +1,7 @@
 * {
 	font-family: 'Yuji Syuku', serif;
 }
-body {
+html, body {
 	height: 100%; 
 }
 .max-height {
