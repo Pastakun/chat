@@ -117,3 +117,7 @@ p:nth-child(2n){
 	font-weight:bold;
 	color: #FFF;
 }
+.yellow {
+	font-weight:bold;
+	color: yellow;
+}
