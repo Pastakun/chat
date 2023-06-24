@@ -54,6 +54,9 @@ function addchat(text, time) {
 		} else if(text.includes('!black')) {
 			document.getElementsByTagName('body')[0].style.backgroundColor = 'black';
 			newtext.textContent = text.replace('!black',"");
+		} else if(text.includes('!yellow')) {
+			newtext.className = 'yellow';
+			newtext.textContent = text.replace('!yellow',"");
 		} else {
 			newtext.textContent = text;
 		}
