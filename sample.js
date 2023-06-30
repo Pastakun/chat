@@ -64,10 +64,12 @@ function addchat(text, time) {
 	const newtext2 = document.createElement('p');
 	newtext2.textContent = time;
 	chat.lastElementChild.appendChild(newtext2);
-	chat.scrollTo({
-		top: chat.scrollHeight,
-		behavior: 'smooth',
-	});
+	if (document.getElementById("scroll").checked){
+		chat.scrollTo({
+			top: chat.scrollHeight,
+			behavior: 'smooth',
+		});
+	}
 }
 function send() {
 	const now = new Date();
